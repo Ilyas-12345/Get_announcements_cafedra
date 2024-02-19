@@ -23,7 +23,6 @@ Endpoints
 Get announcements by departmentId:
 
 GET /announcements/?departmentId={departmentId}
-Retrieves weather information for the specified city.
 
 Example:
 
