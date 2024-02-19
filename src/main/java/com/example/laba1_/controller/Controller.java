@@ -15,7 +15,7 @@ public class Controller {
         this.serviceAPI = serviceAPI;
     }
 
-    @GetMapping("/announcements/    ")
+    @GetMapping("/announcements/")
     public String getAnnouncements(@RequestParam int departmentId) {
         return serviceAPI.getAnnouncements(departmentId);
     }
