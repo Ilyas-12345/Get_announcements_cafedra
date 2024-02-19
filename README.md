@@ -1,4 +1,7 @@
 # Get_announcements_cafedra
+
+The app shows department chair information by department id
+
 Getting Started
 Prerequisites
 Make sure you have the following installed:
