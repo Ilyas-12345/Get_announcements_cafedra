@@ -1,7 +1,11 @@
 package com.example.laba1_.service;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service // сервис - типо бизнес логика
 public class ServicesAPI {
@@ -12,8 +16,10 @@ public class ServicesAPI {
         this.restTemplate = restTemplate;
     }
 
-    public String getAnnouncements(int departmentId) {
+    public List<AnnounceDTO> getAnnouncements(int departmentId) {
         String url = "https://iis.bsuir.by/api/v1/announcements/departments?id=" + departmentId;
-        return restTemplate.getForObject(url, String.class);
+        ResponseEntity<AnnounceDTO[]> response = restTemplate.getForEntity(url, AnnounceDTO[].class);
+        AnnounceDTO[] announceArray = response.getBody();
+        return Arrays.asList(announceArray);
     }
 }
